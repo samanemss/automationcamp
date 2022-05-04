@@ -34,4 +34,4 @@ class LoginTests(unittest.TestCase):
         cls.driver.quit()
 
 
-sleep(20)
+sleep(30)

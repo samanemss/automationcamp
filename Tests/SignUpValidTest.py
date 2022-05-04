@@ -21,7 +21,7 @@ class SignUpTests(unittest.TestCase):
         self.driver.get("https://sharedataset.com/account/login")
         signup = SignUp(driver=self.driver)
         signup.signup_link()
-        signup.enter_email("saman1.mss@yahoo.com")
+        signup.enter_email("saman2.mss@yahoo.com")
         signup.enter_password_signup("123457S@dash")
         signup.continue_button_name_signup()
         sleep(3)
