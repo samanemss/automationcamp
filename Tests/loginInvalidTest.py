@@ -3,13 +3,18 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 import unittest
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 
 
 class LoginTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
-        cls.driver.implicitly_wait(5)
+        cls.service = Service(executable_path=ChromeDriverManager().install())
+        cls.options = Options()
+        cls.options.headless = True
+        cls.driver = webdriver.Chrome(service=cls.service, options=cls.options)
+        cls.driver.implicitly_wait(10)
         cls.driver.maximize_window()
 
     def test_invalid_login(self):
@@ -21,7 +26,7 @@ class LoginTests(unittest.TestCase):
         login.click_on_continue_button()
         login.wrong_email_password()
 
-        sleep(20)
+        sleep(30)
 
     @classmethod
     def tearDownClass(cls) -> None:

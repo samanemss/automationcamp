@@ -5,13 +5,16 @@ from selenium.webdriver.chrome.service import Service
 from time import sleep
 from Pages.MainPage import MainPage
 import unittest
+from selenium.webdriver.chrome.options import Options
 
 
 class LoginTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.service = Service(executable_path=ChromeDriverManager().install())
-        cls.driver = webdriver.Chrome(service=cls.service)
+        cls.options = Options()
+        cls.options.headless = True
+        cls.driver = webdriver.Chrome(service=cls.service, options=cls.options)
         cls.driver.implicitly_wait(10)
         cls.driver.maximize_window()
 
@@ -23,6 +26,7 @@ class LoginTests(unittest.TestCase):
         login.enter_password("123456S@vdash")
         login.click_on_continue_button()
         main_page.check_main_page()
+
         sleep(30)
 
     @classmethod
