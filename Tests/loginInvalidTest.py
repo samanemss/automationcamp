@@ -14,7 +14,7 @@ class LoginTests(unittest.TestCase):
         cls.options = Options()
         cls.options.headless = True
         cls.driver = webdriver.Chrome(service=cls.service, options=cls.options)
-        cls.driver.implicitly_wait(10)
+        cls.driver.implicitly_wait(3)
         cls.driver.maximize_window()
 
     def test_invalid_login(self):
@@ -22,11 +22,11 @@ class LoginTests(unittest.TestCase):
         login = Login(driver=self.driver)
 
         login.enter_username("samane.mss@yahoo.com")
-        login.enter_password("123456S@dash")
+        login.enter_password("123456S@Bdash")
         login.click_on_continue_button()
         login.wrong_email_password()
 
-        sleep(30)
+        sleep(20)
 
     @classmethod
     def tearDownClass(cls) -> None:
@@ -34,4 +34,4 @@ class LoginTests(unittest.TestCase):
         cls.driver.quit()
 
 
-sleep(30)
+sleep(5)
