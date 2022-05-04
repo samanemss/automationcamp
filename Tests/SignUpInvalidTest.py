@@ -26,7 +26,6 @@ class SignUpTests(unittest.TestCase):
         signup.continue_button_name_signup()
         signup.wrong_alert()
 
-
         sleep(20)
 
     @classmethod
