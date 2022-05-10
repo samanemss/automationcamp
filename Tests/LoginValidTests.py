@@ -15,7 +15,7 @@ class LoginTests(unittest.TestCase):
         cls.options = Options()
         cls.options.headless = True
         cls.driver = webdriver.Chrome(service=cls.service, options=cls.options)
-        cls.driver.implicitly_wait(3)
+        cls.driver.implicitly_wait(10)
         cls.driver.maximize_window()
 
     def test_valid_login(self):
@@ -27,7 +27,7 @@ class LoginTests(unittest.TestCase):
         login.click_on_continue_button()
         main_page.check_main_page()
 
-        sleep(20)
+        sleep(30)
 
     @classmethod
     def tearDownClass(cls) -> None:

@@ -1,4 +1,5 @@
 from Pages.Login import Login
+from Pages.CreatePost import CreatePost
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
@@ -8,15 +9,17 @@ import unittest
 from selenium.webdriver.chrome.options import Options
 
 
-class LoginTests(unittest.TestCase):
+class CreatePostTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.service = Service(executable_path=ChromeDriverManager().install())
-        cls.driver = webdriver.Chrome(service=cls.service)
-        cls.driver.implicitly_wait(10)
+        cls.options = Options()
+        cls.options.headless = True
+        cls.driver = webdriver.Chrome(service=cls.service, options=cls.options)
+        cls.driver.implicitly_wait(3)
         cls.driver.maximize_window()
 
-    def test_valid_login(self):
+    def test_valid_createpost(self):
         self.driver.get("https://sharedataset.com/account/login")
         login = Login(driver=self.driver)
         main_page = MainPage(driver=self.driver)

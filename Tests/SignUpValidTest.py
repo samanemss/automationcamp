@@ -14,7 +14,7 @@ class SignUpTests(unittest.TestCase):
         cls.options = Options()
         cls.options.headless = True
         cls.driver = webdriver.Chrome(service=cls.service, options=cls.options)
-        cls.driver.implicitly_wait(10)
+        cls.driver.implicitly_wait(3)
         cls.driver.maximize_window()
 
     def test_invalid_signup(self):
@@ -36,4 +36,4 @@ class SignUpTests(unittest.TestCase):
         cls.driver.quit()
 
 
-sleep(20)
+sleep(5)
