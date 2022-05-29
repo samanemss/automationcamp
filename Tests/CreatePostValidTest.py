@@ -19,29 +19,7 @@ class CreatePostTests(unittest.TestCase):
         cls.driver.implicitly_wait(10)
         cls.driver.maximize_window()
 
-        def test_valid_createpost_powerbi(self):
-            self.driver.get("https://sharedataset.com/account/login")
-            login = Login(driver=self.driver)
-            login.enter_username("samane_mss@yahoo.com")
-            login.enter_password("123456S@vdash")
-            login.click_on_continue_button()
-            main_page = CreatePost(driver=self.driver)
-            main_page.check_main_page()
-            main_page.enter_title("Test_PowerBI_OnlyMe")
-            main_page.select_source_powerbi()
-            main_page.enter_publicurl(
-                "https://app.powerbi.com/view?r=eyJrIjoiZDIxOTgwOGQtNmNlOS00NTJmLWE2NWUtYzU4ZWNkOWI0MTFjIiwidCI6IjkyNWJkNTViLTA1MjEtNDAwMy1iN2M5LWMzZTY4MzY3ZDcyNCIsImMiOjh9")
-            main_page.enter_originalauthor("Test_PowerBI")
-            main_page.enter_description("Test_PowerBI")
-            main_page.enter_tags("Test_PowerBI")
-            main_page.select_whocanseepostonlyme()
-            main_page.enter_license("Test_PowerBI")
-            main_page.enter_uploadposter()
-            main_page.submitpost()
-            main_page.check_post_created()
-
-            sleep(5)
-        # def test_valid_createpost_powerbi_everybody(self):
+        # def test_valid_createpost_powerbi(self):
         #     self.driver.get("https://sharedataset.com/account/login")
         #     login = Login(driver=self.driver)
         #     login.enter_username("samane_mss@yahoo.com")
@@ -49,20 +27,43 @@ class CreatePostTests(unittest.TestCase):
         #     login.click_on_continue_button()
         #     main_page = CreatePost(driver=self.driver)
         #     main_page.check_main_page()
-        #     main_page.enter_title("Test_PowerBI_EveryBody")
+        #     main_page.enter_title("Test_PowerBI_OnlyMe")
         #     main_page.select_source_powerbi()
         #     main_page.enter_publicurl(
         #         "https://app.powerbi.com/view?r=eyJrIjoiZDIxOTgwOGQtNmNlOS00NTJmLWE2NWUtYzU4ZWNkOWI0MTFjIiwidCI6IjkyNWJkNTViLTA1MjEtNDAwMy1iN2M5LWMzZTY4MzY3ZDcyNCIsImMiOjh9")
         #     main_page.enter_originalauthor("Test_PowerBI")
         #     main_page.enter_description("Test_PowerBI")
         #     main_page.enter_tags("Test_PowerBI")
-        #     main_page.select_whocanseeposteverybody()
+        #     main_page.select_whocanseepostonlyme()
         #     main_page.enter_license("Test_PowerBI")
         #     main_page.enter_uploadposter()
         #     main_page.submitpost()
         #     main_page.check_post_created()
         #
         #     sleep(5)
+
+        def test_valid_createpost_powerbi_everybody(self):
+            self.driver.get("https://sharedataset.com/account/login")
+            login = Login(driver=self.driver)
+            login.enter_username("samane_mss@yahoo.com")
+            login.enter_password("123456S@vdash")
+            login.click_on_continue_button()
+            main_page = CreatePost(driver=self.driver)
+            main_page.check_main_page()
+            main_page.enter_title("Test_PowerBI_EveryBody")
+            main_page.select_source_powerbi()
+            main_page.enter_publicurl(
+                "https://app.powerbi.com/view?r=eyJrIjoiZDIxOTgwOGQtNmNlOS00NTJmLWE2NWUtYzU4ZWNkOWI0MTFjIiwidCI6IjkyNWJkNTViLTA1MjEtNDAwMy1iN2M5LWMzZTY4MzY3ZDcyNCIsImMiOjh9")
+            main_page.enter_originalauthor("Test_PowerBI")
+            main_page.enter_description("Test_PowerBI")
+            main_page.enter_tags("Test_PowerBI")
+            main_page.select_whocanseeposteverybody()
+            main_page.enter_license("Test_PowerBI")
+            main_page.enter_uploadposter()
+            main_page.submitpost()
+            main_page.check_post_created()
+
+            sleep(5)
 
     # def test_valid_createpost_tableau_onlyme(self):
     #     self.driver.get("https://sharedataset.com/posts/create")
@@ -107,9 +108,9 @@ class CreatePostTests(unittest.TestCase):
     #     main_page.enter_uploadposter()
     #     main_page.submitpost()
     #     main_page.check_post_created()
-    #     self.driver.refresh(driver=self.driver)
-    #
-    #     sleep(5)
+    #     # self.driver.refresh(driver=self.driver)
+
+    #    sleep(5)
 
     @classmethod
     def tearDownClass(cls) -> None:
