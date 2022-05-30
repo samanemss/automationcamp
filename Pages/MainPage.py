@@ -8,3 +8,4 @@ class MainPage:
 
     def check_main_page(self):
         self.driver.find_element(By.LINK_TEXT, create_a_post_button_link_text)
+
