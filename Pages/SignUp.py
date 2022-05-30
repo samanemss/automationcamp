@@ -2,7 +2,6 @@ from Pages.Locators import *
 from selenium.webdriver.common.by import By
 
 
-
 class SignUp:
     def __init__(self, driver):
         self.driver = driver
