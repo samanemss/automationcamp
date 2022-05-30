@@ -64,29 +64,29 @@ class CreatePostTests(unittest.TestCase):
 
         sleep(5)
 
-    # def test_valid_createpost_tableau_everybody(self):
-    #     self.driver.get("https://sharedataset.com/account/login")
-    #     login = Login(driver=self.driver)
-    #     login.enter_username("samane_mss@yahoo.com")
-    #     login.enter_password("123456S@vdash")
-    #     login.click_on_continue_button()
-    #     main_page = CreatePost(driver=self.driver)
-    #     main_page.check_main_page()
-    #     main_page.enter_title("Test_tableau_EveryBody")
-    #     main_page.select_source_tableau()
-    #     main_page.enter_publicurl(
-    #         "https://public.tableau.com/views/USFruitConsumption/Fruit?:language=en-US&:display_count=n&:origin=viz_share_link")
-    #     main_page.enter_originalauthor("Test_EveryBody")
-    #     main_page.enter_description("Test_EveryBody")
-    #     main_page.enter_tags("Test_EveryBody")
-    #     main_page.select_whocanseeposteverybody()
-    #     main_page.enter_license("Test_EveryBody")
-    #     main_page.enter_uploadposter()
-    #     main_page.submitpost()
-    #     main_page.check_post_created()
-    #     # self.driver.refresh(driver=self.driver)
+    def test_valid_createpost_tableau_everybody(self):
+        self.driver.get("https://sharedataset.com/account/login")
+        login = Login(driver=self.driver)
+        login.enter_username("samane_mss@yahoo.com")
+        login.enter_password("123456S@vdash")
+        login.click_on_continue_button()
+        main_page = CreatePost(driver=self.driver)
+        main_page.check_main_page()
+        main_page.enter_title("Test_tableau_EveryBody")
+        main_page.select_source_tableau()
+        main_page.enter_publicurl(
+            "https://public.tableau.com/views/USFruitConsumption/Fruit?:language=en-US&:display_count=n&:origin=viz_share_link")
+        main_page.enter_originalauthor("Test_EveryBody")
+        main_page.enter_description("Test_EveryBody")
+        main_page.enter_tags("Test_EveryBody")
+        main_page.select_whocanseeposteverybody()
+        main_page.enter_license("Test_EveryBody")
+        main_page.enter_uploadposter()
+        main_page.submitpost()
+        main_page.check_post_created()
+        # self.driver.refresh(driver=self.driver)
 
-    #    sleep(5)
+       sleep(5)
 
     @classmethod
     def tearDownClass(cls) -> None:
