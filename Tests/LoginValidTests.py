@@ -27,7 +27,7 @@ class LoginTests(unittest.TestCase):
         login.click_on_continue_button()
         main_page.check_main_page()
 
-      #  sleep(30)
+        sleep(30)
 
     @classmethod
     def tearDownClass(cls) -> None:
