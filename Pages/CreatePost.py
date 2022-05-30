@@ -16,7 +16,7 @@ class CreatePost:
     def select_source_powerbi(self):
         source = self.driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div/div/div/div[2]/div/div[1]/div[2]/select')
         drop = Select(source)
-        drop.select_by_value(select_value_powerbi)
+        drop.select_by_value(select_value_power_bi)
 
     def select_source_tableau(self):
         source = self.driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[2]/div/div/div/div[2]/div/div[1]/div[2]/select')
